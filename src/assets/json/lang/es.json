@@ -1,0 +1,9 @@
+{
+  "buttonText": "B-) CORRE LA TÓMBOLA!!!",
+  "emptyText": ":-( Ya no queda más gente!!!!!",
+  "noSelected": ":-)",
+  "selectedTitle": "Seleccionados:",
+  "reloadInstrucctions": "Para actualizar la lista de personas ingresa una aquí separada por comas",
+  "reloadButtonText": "Actualizar lista",
+  "currentListTitle": "Lista actual"
+}

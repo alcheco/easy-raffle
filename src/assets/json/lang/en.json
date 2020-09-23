@@ -1,0 +1,9 @@
+{
+  "buttonText": "B-) GO RAFFLE!!!",
+  "emptyText": ":-( No more elements in list!!!!!",
+  "noSelected": ":-)",
+  "selectedTitle": "Selected:",
+  "reloadInstrucctions": "Update the raffle writting a comma separated list",
+  "reloadButtonText": "Update raffle",
+  "currentListTitle": "Actual list"
+}
