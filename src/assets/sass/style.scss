@@ -11,9 +11,10 @@ html,body{
   margin: 0;
 }
 h1{
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 .title{
+  font-size: 2.6rem;
   font-family: 'raffle' !important;
   color: $color1;
   img{
@@ -42,6 +43,12 @@ h1{
   cursor: pointer;
   opacity: 1;
   box-shadow: 5px 5px 2px #0000003F;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .btn-block{
   width: calc(100% - 40px);
@@ -81,8 +88,8 @@ textarea{
 .card{
   background-color: #FFF;
   max-width: 900px;
-  margin: 40px auto;
-  padding: 40px;
+  margin: 0px auto;
+  padding: 20px 40px;
   box-shadow: 5px 5px 2px #0000003F;
 }
 .d-flex{
@@ -100,6 +107,13 @@ textarea{
     -ms-flex-positive: 1;
     flex-grow: 1;
     max-width: 100%;
+  }
+  h1{
+    font-size: 2.2rem;
+  }
+  .card{
+    margin: 40px auto;
+    padding: 40px;
   }
 }
 h1, .h1{

@@ -4,6 +4,7 @@ dist/
 npm-debug.log
 yarn-error.log
 src/assets/json/data-sb.json
+src/assets/json/lang/es-sb.json
 src/assets/images/logo-sb.png
 
 # Editor directories and files

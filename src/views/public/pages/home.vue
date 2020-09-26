@@ -90,6 +90,7 @@ export default {
       if(this.prevSelected.length == this.listElements.length){
         this.finalText = true;
       }else{
+        this.finalText = false;
         let elementUniverse = this.listElements.filter(element => !this.prevSelected.includes(element));
         this.selectedElement = elementUniverse[Math.floor(Math.random() * elementUniverse.length)];
         this.prevSelected.push(this.selectedElement);
@@ -104,15 +105,20 @@ export default {
       this.prevSelected = [];
       this.listElements = this.list.split(",").map(elem => elem.trim()).filter(function (elem, index, self) { return elem.length > 0 && self.indexOf(elem) === index});
       this.list = "";
+      this.finalText = false;
+      this.selectedElement = this.$lang.noSelected;
       this.resizeBackground();
     },
     loadJson(){
+      this.prevSelected = [];
       this.listElements = this.jsonList;
+      this.list = "";
+      this.finalText = false;
+      this.selectedElement = this.$lang.noSelected;
+      this.resizeBackground();
     },
     resizeBackground(){
-      let body = document.body;
-      let html = document.documentElement;
-      document.getElementById('background').style.height = (Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight )+20)+'px';
+      setTimeout(() => {  document.getElementById('background').style.height = (document.documentElement.offsetHeight)+'px'; }, 200);
     }
   },
 }

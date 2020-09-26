@@ -1,9 +1,9 @@
 {
   "buttonText": "B-) CORRE LA TÓMBOLA!!!",
-  "emptyText": ":-( Ya no queda más gente!!!!!",
+  "emptyText": ":-( Ya no quedan más elementos!!!!!",
   "noSelected": ":-)",
   "selectedTitle": "Seleccionados:",
-  "reloadInstrucctions": "Para actualizar la lista de personas ingresa una aquí separada por comas",
+  "reloadInstrucctions": "Para actualizar la lista ingresa una aquí separada por comas",
   "reloadButtonText": "Actualizar lista",
   "currentListTitle": "Lista actual",
   "jsonButtonText": "Cargar lista precargada"
