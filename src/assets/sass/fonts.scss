@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'raffle';
+  src: local("Raffle"), url(./assets/fonts/font.ttf) format("truetype");
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: local("Montserrat"), url(./assets/fonts/montserrat/Light.ttf) format("truetype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: local("Montserrat"), url(./assets/fonts/montserrat/Regular.ttf) format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: local("Montserrat"), url(./assets/fonts/montserrat/Bold.ttf) format("truetype");
+  font-weight: bold;
+}
+html, body, textarea{
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}

@@ -5,5 +5,6 @@
   "selectedTitle": "Seleccionados:",
   "reloadInstrucctions": "Para actualizar la lista de personas ingresa una aquí separada por comas",
   "reloadButtonText": "Actualizar lista",
-  "currentListTitle": "Lista actual"
+  "currentListTitle": "Lista actual",
+  "jsonButtonText": "Cargar lista precargada"
 }

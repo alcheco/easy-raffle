@@ -3,8 +3,8 @@ node_modules/
 dist/
 npm-debug.log
 yarn-error.log
-raffle-sara-blinder.json
-src/assets/logo-blinder.png
+src/assets/json/data-sb.json
+src/assets/images/logo-sb.png
 
 # Editor directories and files
 .idea

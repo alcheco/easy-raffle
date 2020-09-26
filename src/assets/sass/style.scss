@@ -1,0 +1,112 @@
+@import 'variables.scss';
+@import 'fonts.scss';
+@import 'background-animation.scss';
+@import 'firework.scss';
+html{
+  background: #eee;
+  overflow-x: hidden;
+}
+html,body{
+  padding: 0;
+  margin: 0;
+}
+h1{
+  font-size: 2.5rem;
+}
+.title{
+  font-family: 'raffle' !important;
+  color: $color1;
+  img{
+    vertical-align: middle;
+  }
+}
+.mt-2{
+  margin-top: 2rem;
+}
+.mb-2{
+  margin-bottom: 2rem;
+}
+.text-danger{
+  background-color: #DC143C;
+  color: #FFF;
+  padding: 10px 0px;
+  font-size: 1.4rem;
+}
+[class*="btn-"]{
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 15px 20px;
+  display: inline-block;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: 1;
+  box-shadow: 5px 5px 2px #0000003F;
+}
+.btn-block{
+  width: calc(100% - 40px);
+}
+.btn-sm{
+  font-size: 1rem;
+  padding: 10px 20px;
+}
+.btn-raffle-1{
+  background-color: $color1;
+  color: $color1Font;
+}
+.btn-raffle-2{
+  background-color: $color2;
+  color: $color2Font;
+}
+.btn-raffle-3{
+  background-color: $color3;
+  color: $color3Font;
+}
+.text-right{
+  text-align: right;
+}
+textarea{
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0px;
+  width: calc(100% - 20px);
+}
+[class*="btn-"]:hover{
+  opacity: 1;
+  box-shadow: inset 5px 5px 2px #0000003F;
+}
+.text-center{
+  text-align: center;
+}
+.card{
+  background-color: #FFF;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px;
+  box-shadow: 5px 5px 2px #0000003F;
+}
+.d-flex{
+  display: flex;
+  flex-wrap: wrap;
+}
+.col{
+  position: relative;
+  width: 100%;
+}
+@media (min-width: 768px){
+  .col{
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+}
+h1, .h1{
+  margin: 1rem 0px;
+}
+.answer-box{
+  background-color: #EEE;
+  padding: 20px;
+  box-shadow: inset 5px 5px 2px #0000003F;
+}
