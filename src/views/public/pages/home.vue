@@ -1,26 +1,12 @@
 <template>
   <div>
     <ul id="background" class="background-logo">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li v-for="n in 10" v-bind:key="n+'background'"></li>
     </ul>
     <div id="firework" class="">
-      <div class="explosion"><div class="spark caolor1"></div></div>
-      <div class="explosion"><div class="spark color2"></div></div>
-      <div class="explosion"><div class="spark color3"></div></div>
-      <div class="explosion"><div class="spark color1"></div></div>
-      <div class="explosion"><div class="spark color2"></div></div>
-      <div class="explosion"><div class="spark color3"></div></div>
-      <div class="explosion"><div class="spark color1"></div></div>
-      <div class="explosion"><div class="spark color2"></div></div>
+      <template v-for="n in 8" >
+      <div class="explosion" v-bind:key="n+'firework'"><div :class="{'spark': true, 'color1': [1,4,7].includes(n), 'color2': [2,5,8].includes(n), 'color3': [3,6].includes(n)}"></div></div>
+      </template>
     </div>
     <div class="card">
       <div class="d-flex mb-2">
@@ -29,7 +15,7 @@
         </h1>
         <div class="col text-right h1"><a @click="selectElement()" class="btn-raffle-1 btn-block">{{$lang.buttonText}}</a></div>
       </div>
-      <div v-if="finalText" class="text-danger text-center">
+      <div v-if="errorText" class="text-danger text-center">
         {{$lang.emptyText}}
       </div>
       <div class="answer-box text-center">
@@ -70,7 +56,7 @@ export default {
       logo: require('@/assets/images/logo.png'),
       list: '',
       selectedElement: null,
-      finalText: false,
+      errorText: false,
       prevSelected: []
     }
   },
@@ -82,15 +68,14 @@ export default {
       this.jsonList = [];
     }
     document.title = this.title;
-    this.selectedElement = this.$lang.noSelected;
+    this.cleanData();
   },
   methods: {
     selectElement(){
       document.getElementById('firework').classList.remove('firework');
       if(this.prevSelected.length == this.listElements.length){
-        this.finalText = true;
+        this.errorText = true;
       }else{
-        this.finalText = false;
         let elementUniverse = this.listElements.filter(element => !this.prevSelected.includes(element));
         this.selectedElement = elementUniverse[Math.floor(Math.random() * elementUniverse.length)];
         this.prevSelected.push(this.selectedElement);
@@ -102,21 +87,21 @@ export default {
     changeList(){
       if(this.list.length == 0)
         return;
-      this.prevSelected = [];
       this.listElements = this.list.split(",").map(elem => elem.trim()).filter(function (elem, index, self) { return elem.length > 0 && self.indexOf(elem) === index});
-      this.list = "";
-      this.finalText = false;
-      this.selectedElement = this.$lang.noSelected;
+      this.cleanData();
       this.resizeBackground();
     },
     loadJson(){
-      this.prevSelected = [];
       this.listElements = this.jsonList;
-      this.list = "";
-      this.finalText = false;
-      this.selectedElement = this.$lang.noSelected;
+      this.cleanData();
       this.resizeBackground();
-    },
+	},
+	cleanData(){
+      this.prevSelected = [];
+      this.list = "";
+      this.errorText = false;
+      this.selectedElement = this.$lang.noSelected;
+	},
     resizeBackground(){
       setTimeout(() => {  document.getElementById('background').style.height = (document.documentElement.offsetHeight)+'px'; }, 200);
     }
