@@ -3,7 +3,7 @@
 @import 'background-animation.scss';
 @import 'firework.scss';
 html{
-  background: #eee;
+  background: $grey;
   overflow-x: hidden;
   min-height: 100vh;
 }
@@ -14,10 +14,13 @@ html,body{
 h1{
   font-size: 1.5rem;
 }
+h1, .h1{
+  margin: 1rem 0px;
+}
 .title{
   font-size: 2.6rem;
   font-family: 'raffle' !important;
-  color: $color1;
+  @include get-color(color, 1, $colors);
   img{
     vertical-align: middle;
   }
@@ -50,6 +53,10 @@ h1{
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  &:hover{
+    opacity: 1;
+    box-shadow: inset 5px 5px 2px #0000003F;	  
+  }
 }
 .btn-block{
   width: calc(100% - 40px);
@@ -58,33 +65,22 @@ h1{
   font-size: 1rem;
   padding: 10px 20px;
 }
-.btn-raffle-1{
-  background-color: $color1;
-  color: $color1Font;
+@for $i from 1 through 3 {
+  .btn-raffle-#{$i}{
+    @include get-color(color, $i, $colorFonts);
+    @include get-color(background-color, $i, $colors);
+  }
 }
-.btn-raffle-2{
-  background-color: $color2;
-  color: $color2Font;
-}
-.btn-raffle-3{
-  background-color: $color3;
-  color: $color3Font;
-}
-.text-right{
-  text-align: right;
+@each $textAlignment in $textAlignments {
+  .text-#{$textAlignment}{
+	text-align: $textAlignment;
+  }
 }
 textarea{
   border-radius: 10px;
   padding: 10px;
   margin: 10px 0px;
   width: calc(100% - 20px);
-}
-[class*="btn-"]:hover{
-  opacity: 1;
-  box-shadow: inset 5px 5px 2px #0000003F;
-}
-.text-center{
-  text-align: center;
 }
 .card{
   background-color: #FFF;
@@ -101,6 +97,11 @@ textarea{
   position: relative;
   width: 100%;
 }
+.answer-box{
+  background-color: $grey;
+  padding: 20px;
+  box-shadow: inset 5px 5px 2px #0000003F;
+}
 @media (min-width: 768px){
   .col{
     -ms-flex-preferred-size: 0;
@@ -116,12 +117,4 @@ textarea{
     margin: 40px auto;
     padding: 40px;
   }
-}
-h1, .h1{
-  margin: 1rem 0px;
-}
-.answer-box{
-  background-color: #EEE;
-  padding: 20px;
-  box-shadow: inset 5px 5px 2px #0000003F;
 }

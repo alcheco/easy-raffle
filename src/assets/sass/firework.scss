@@ -7,7 +7,7 @@
   content: "";
   display: block;
   border-radius: 5px;
-  background-color: $color1;
+  @include get-color(background-color, 1, $colors);
   width: 5px;
   height: 0px;
   transform: translateY(500px);
@@ -16,7 +16,7 @@
 @keyframes fireworkstart{
   0%{
     height: 0px;
-  transform: translateY(500px);
+    transform: translateY(500px);
   }
   25%{
     height: 50px;
@@ -53,29 +53,12 @@
     opacity: 0;
   }
 }
-.firework .explosion:nth-child(1) {
-  transform: rotate(0deg);
-}
-.firework .explosion:nth-child(2) {
-  transform: rotate(90deg);
-}
-.firework .explosion:nth-child(3) {
-  transform: rotate(180deg);
-}
-.firework .explosion:nth-child(4) {
-  transform: rotate(-90deg);
-}
-.firework .explosion:nth-child(5) {
-  transform: rotate(45deg);
-}
-.firework .explosion:nth-child(6) {
-  transform: rotate(-45deg);
-}
-.firework .explosion:nth-child(7) {
-  transform: rotate(135deg);
-}
-.firework .explosion:nth-child(8) {
-  transform: rotate(225deg);
+$degree: 0deg;
+@for $i from 1 through 8 {
+  .firework .explosion:nth-child(#{$i}) {
+    transform: rotate($degree);
+  }
+  $degree: $degree + 45deg;
 }
 .firework .explosion .spark{
   position: absolute;
@@ -85,14 +68,10 @@
   border-radius: 5px;
   animation: explosion2 $time ease-in-out 1;
 }
-.firework .explosion .spark.color1 {
-  background-color: $color1;
-}
-.firework .explosion .spark.color2 {
-  background-color: $color2;
-}
-.firework .explosion .spark.color3 {
-  background-color: $color3;
+@for $i from 1 through 3 {
+  .firework .explosion .spark.color#{$i} {
+	@include get-color(background-color, $i, $colors);
+  }
 }
 @keyframes explosion2{
   75%{

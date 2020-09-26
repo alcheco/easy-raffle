@@ -1,7 +1,8 @@
-$color1: #F65058;
-$color1Font: #FFF;
-$color2: #3EABC7;
-$color2Font: #FFF;
-$color3: #FBDE44;
-$color3Font: #222;
 $time: 2s;
+$grey: #EEE;
+$textAlignments: left center right;
+$colors: #F65058 #3EABC7 #FBDE44;
+$colorFonts:  #FFF #FFF #222;
+@mixin get-color($property, $index, $list) {
+  #{$property}: nth($list, $index);
+}
